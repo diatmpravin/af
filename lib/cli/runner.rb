@@ -160,11 +160,7 @@ class VMC::Cli::Runner
 
     when 'target'
       usage('af target [url] [--url]')
-      if @args.size == 1
-        set_cmd(:misc, :set_target, 1)
-      else
-        set_cmd(:misc, :target)
-      end
+      (@args.size == 1) ? set_cmd(:misc, :set_target, 1) : set_cmd(:misc, :target)
 
     when 'targets'
       usage('af targets')
